@@ -41,7 +41,7 @@ while iteration < n_iterations:
             gbest_fitness_value = fitness_cadidate
             gbest_position = particle_position_vector[i]
 
-    if (abs(gbest_fitness_value - target) < target_error):
+    if (abs(gbest_fitness_value) >= target_error):
         break
 
     for i in range(n_particles):
@@ -53,4 +53,5 @@ while iteration < n_iterations:
 
     iteration = iteration + 1
 
-print("The best position is ", gbest_position, "in iteration number ", iteration)
+print("The best position is ", gbest_position[0], "in iteration number ", iteration-1)
+print ('error absolue :',abs(gbest_fitness_value-target_error))
